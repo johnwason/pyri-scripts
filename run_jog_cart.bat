@@ -7,7 +7,7 @@ set ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC=1
 
 title jog_cart
 
-cd C:\Users\wasonj\Documents\pyri\software\
+cd %~dp0\..
 
 call venv\Scripts\activate.bat
 
