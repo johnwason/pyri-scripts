@@ -1,0 +1,173 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: pyri-variable-storage",
+            "type": "python",
+            "request": "launch",
+            "module": "pyri.variable_storage",
+            "args": [
+                "--db-file=test3.db",
+                "--device-info-file=pyri-variable-storage/config/pyri_variable_storage_default_info.yml",
+                "--robotraconteur-tcp-ws-add-origin=http://localhost:8000"
+            ],
+            "env": {
+                "ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC": "1",
+                "ROBOTRACONTEUR_PYTHON_ENABLE_DEBUGPY": "TRUE"
+            }
+        },
+        {
+            "name": "Python: pyri-device-manager",
+            "type": "python",
+            "request": "launch",
+            "module": "pyri.device_manager",
+            "args": [
+                "--device-info-file=pyri-device-manager/config/pyri_device_manager_default_info.yml",
+                "--variable-storage-url=rr+tcp://localhost:59901?service=variable_storage",
+                "--robotraconteur-tcp-ws-add-origin=http://localhost:8000"
+            ],
+            "env": {
+                "ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC": "1",
+                "ROBOTRACONTEUR_LOG_LEVEL": "DEBUG",
+                "ROBOTRACONTEUR_PYTHON_ENABLE_DEBUGPY": "TRUE"
+            }
+        },
+        {
+            "name": "Python: pyri-sandbox",
+            "type": "python",
+            "request": "launch",
+            "module": "pyri.sandbox",
+            "args": [
+                "--device-info-file=pyri-sandbox/config/pyri_sandbox_default_info.yml",
+                "--device-manager-url=rr+tcp://localhost:59902?service=device_manager",
+                "--robotraconteur-tcp-ws-add-origin=http://localhost:8000"
+            ],
+            "env": {
+                "ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC": "1",
+                "ROBOTRACONTEUR_LOG_LEVEL": "WARNING",
+                "ROBOTRACONTEUR_PYTHON_ENABLE_DEBUGPY": "TRUE"
+            }
+        },
+        {
+            "name": "Python: pyri-webui-server",
+            "type": "python",
+            "request": "launch",
+            "module": "pyri.webui_server",
+            "args": [
+                "--device-manager-url=rr+tcp://localhost:59902?service=device_manager",
+                "--robotraconteur-tcp-ws-add-origin=http://localhost:8000"
+            ],
+            "env": {
+                "ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC": "1",
+                "ROBOTRACONTEUR_LOG_LEVEL": "WARNING",
+                "ROBOTRACONTEUR_PYTHON_ENABLE_DEBUGPY": "TRUE"
+            }
+        },
+        {
+            "name": "Python: pyri-devices-states",
+            "type": "python",
+            "request": "launch",
+            "module": "pyri.devices_states",
+            "args": [
+                "--device-info-file=pyri-devices-states/config/pyri_devices_states_default_info.yml",
+                "--device-manager-url=rr+tcp://localhost:59902?service=device_manager",
+                "--robotraconteur-tcp-ws-add-origin=http://localhost:8000"
+            ],
+            "env": {
+                "ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC": "1",
+                "ROBOTRACONTEUR_LOG_LEVEL": "WARNING",
+                "ROBOTRACONTEUR_PYTHON_ENABLE_DEBUGPY": "TRUE"
+            }
+        },
+        {
+            "name": "Python: pyri-jog-joint-service",
+            "type": "python",
+            "request": "launch",
+            "module": "pyri.robotics.jog_joint_service",
+            "args": [
+                "--device-info-file=pyri-robotics/config/pyri_jog_joint_service_default_info.yml",
+                "--device-manager-url=rr+tcp://localhost:59902?service=device_manager",
+                "--robotraconteur-tcp-ws-add-origin=http://localhost:8000"
+            ],
+            "env": {
+                "ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC": "1",
+                "ROBOTRACONTEUR_LOG_LEVEL": "INFO",
+                "ROBOTRACONTEUR_PYTHON_ENABLE_DEBUGPY": "TRUE"
+            }
+        },
+        {
+            "name": "Python: pyri-jog-cartesian-service",
+            "type": "python",
+            "request": "launch",
+            "module": "pyri.robotics.jog_cartesian_service",
+            "args": [
+                "--device-info-file=pyri-robotics/config/pyri_jog_cartesian_service_default_info.yml",
+                "--device-manager-url=rr+tcp://localhost:59902?service=device_manager",
+                "--robotraconteur-tcp-ws-add-origin=http://localhost:8000"
+            ],
+            "env": {
+                "ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC": "1",
+                "ROBOTRACONTEUR_LOG_LEVEL": "WARNING",
+                "ROBOTRACONTEUR_PYTHON_ENABLE_DEBUGPY": "TRUE"
+            }
+        },
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "env": {
+                "ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC": "1",
+                "ROBOTRACONTEUR_LOG_LEVEL": "WARNING",
+                "ROBOTRACONTEUR_PYTHON_ENABLE_DEBUGPY": "TRUE"
+            }
+        },
+        {
+            "name": "Python: run pytest",
+            "type": "python",
+            "request": "launch",
+            "module": "pytest",
+            "console": "integratedTerminal",
+            //"args":["pyri-core/test/sandbox/test_pyri_restricting_transformer.py"],
+            "args": [
+                "pyri-variable-storage",
+                "-s"
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "Python: PyRI Core",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/venv/Scripts/pyri-core-script.py",
+            "console": "integratedTerminal",
+            "env": {
+                "ROBOTRACONTEUR_LOG_LEVEL": "TRACE",
+                "ROBOTRACONTEUR_PYTHON_ENABLE_DEBUGPY": "TRUE"
+            }
+        },
+        {
+            "name": "Python: Attach using Process Id",
+            "type": "python",
+            "request": "attach",
+            "processId": "${command:pickProcess}"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "PyRI Runtime",
+            "configurations": [
+                "Python: pyri-variable-storage",
+                "Python: pyri-device-manager",
+                "Python: pyri-sandbox",
+                "Python: pyri-webui-server",
+                "Python: pyri-devices-states",
+                "Python: pyri-jog-joint-service"
+            ]
+        }
+    ]
+}
