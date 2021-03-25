@@ -13,7 +13,7 @@ d.refresh_devices(1)
 
 d.connect_device('joint_jog')
 
-jog_sub = d.get_device_subscription("joint_jog")
+jog_sub = d.get_device_subscription("jog_joint")
 
 i = 0
 dir = 0

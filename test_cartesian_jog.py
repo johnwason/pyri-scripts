@@ -8,7 +8,7 @@ d = DeviceManagerClient('rr+tcp://localhost:59902?service=device_manager')
 d.refresh_devices(1)
 
 
-jog_service = d.get_device_client("cartesian_jog",1)
+jog_service = d.get_device_client("jog_cartesian",1)
 
 print(jog_service.device_info.device.name)
 
