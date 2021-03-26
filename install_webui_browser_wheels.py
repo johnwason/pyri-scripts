@@ -18,6 +18,7 @@ import appdirs
 from pathlib import Path
 import requests
 from packaging.version import parse
+import sys
 
 wheels_dir = Path(appdirs.user_data_dir(appname="pyri-webui-server", appauthor="pyri-project", roaming=False)).joinpath("wheels")
 
@@ -34,7 +35,7 @@ def install_wheel(wheel_name):
         version = version_match.group(1)
     print(version)
 
-    subprocess.check_call("python setup.py bdist_wheel",shell=True,cwd=base_path.joinpath(wheel_name))
+    subprocess.check_call(f"{sys.executable} setup.py bdist_wheel",shell=True,cwd=base_path.joinpath(wheel_name))
 
     wheel_name2 = wheel_name.replace("-","_")
 

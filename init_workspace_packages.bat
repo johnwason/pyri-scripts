@@ -29,10 +29,13 @@ if %errorlevel% neq 0 exit /b %errorlevel%
 venv\Scripts\python -m pip install -e pyri-example-plugin
 if %errorlevel% neq 0 exit /b %errorlevel%
 
-pyri-sandbox-service --install-blockly-compiler
+venv\Scripts\python -m pip install requests packaging wheel
+if %errorlevel% neq 0 exit /b %errorlevel%
+
+venv\Scripts\pyri-sandbox-service --install-blockly-compiler
 if %errorlevel% neq 0 exit /b %errorlevel%
 
 cd scripts
-python install_webui_browser_wheels.py
+..\venv\Scripts\python install_webui_browser_wheels.py
 if %errorlevel% neq 0 exit /b %errorlevel%
 
