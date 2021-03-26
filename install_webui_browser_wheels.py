@@ -84,6 +84,8 @@ def install_pip_wheel(wheel_name):
     
 
 def main():
+    wheels_dir.mkdir(exist_ok=True, parents=True)
+
     for w in wheels_names:
         install_wheel(w)
 
