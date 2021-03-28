@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e
+
+export ROBOTRACONTEUR_LOG_LEVEL=INFO
+export ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC=1
+
+SCRIPT=$(readlink -f "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
+
+cd $SCRIPTPATH/..
+
+source ./venv/bin/activate
+
+python -m pyri.variable_storage --db-file=test3.db --device-info-file=pyri-variable-storage/config/pyri_variable_storage_default_info.yml --robotraconteur-tcp-ws-add-origin=http://localhost:8000,http://192.168.1.130:8000 --robotraconteur-tcp-ipv4-discovery=true

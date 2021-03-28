@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -e
+
+SCRIPT=$(readlink -f "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
+
+cd $SCRIPTPATH/..
+
+if ! [ -x "$(command -v npm)" ]; then
+  echo NodeJS npm command is not found. Install NodeJS before continuing
+  exit 1
+fi
+
+./venv/bin/python -m pip install requests packaging wheel
+
+./venv/bin/python -m pip install -e pyri-common
+./venv/bin/python -m pip install -e pyri-variable-storage
+./venv/bin/python -m pip install -e pyri-device-manager
+./venv/bin/python -m pip install -e pyri-devices-states
+./venv/bin/python -m pip install -e pyri-sandbox
+./venv/bin/python -m pip install -e pyri-webui-server
+./venv/bin/python -m pip install -e pyri-core
+./venv/bin/python -m pip install -e pyri-robotics
+./venv/bin/python -m pip install -e pyri-example-plugin
+
+./venv/bin/pyri-sandbox-service --install-blockly-compiler
+
+cd scripts
+../venv/bin/python install_webui_browser_wheels.py
