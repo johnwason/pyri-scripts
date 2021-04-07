@@ -6,5 +6,4 @@ gnome-terminal \
   --tab --title="devices_states" -e ./run_devices_states \
   --tab --title="sandbox" -e ./run_sandbox \
   --tab --title="webui_server" -e ./run_webui_server \
-  --tab --title="jog_joint" -e ./run_jog_joint \
-  --tab --title="jog_cart" -e ./run_jog_cart
+  --tab --title="robotics_jog" -e ./run_robotics_jog
