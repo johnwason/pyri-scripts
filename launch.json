@@ -83,14 +83,14 @@
             }
         },
         {
-            "name": "Python: pyri-jog-joint-service",
+            "name": "Python: pyri-robotics-jog-service",
             "type": "python",
             "request": "launch",
-            "module": "pyri.robotics.jog_joint_service",
+            "module": "pyri.robotics.robotics_jog_service",
             "args": [
-                "--device-info-file=pyri-robotics/config/pyri_jog_joint_service_default_info.yml",
+                "--device-info-file=pyri-robotics/config/pyri_robotics_jog_service_default_info.yml",
                 "--device-manager-url=rr+tcp://localhost:59902?service=device_manager",
-                "--robotraconteur-tcp-ws-add-origin=http://localhost:8000"
+                "--robotraconteur-tcp-ws-add-origin=http://localhost:8000,http://192.168.1.130:8000"
             ],
             "env": {
                 "ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC": "1",
@@ -99,20 +99,21 @@
             }
         },
         {
-            "name": "Python: pyri-jog-cartesian-service",
+            "name": "Python: pyri-vision-viewer-service",
             "type": "python",
             "request": "launch",
-            "module": "pyri.robotics.jog_cartesian_service",
+            "module": "pyri.vision.camera_viewer_service",
             "args": [
-                "--device-info-file=pyri-robotics/config/pyri_jog_cartesian_service_default_info.yml",
+                "--device-info-file=pyri-vision/config/pyri_vision_camera_viewer_service_default_info.yml",
                 "--device-manager-url=rr+tcp://localhost:59902?service=device_manager",
-                "--robotraconteur-tcp-ws-add-origin=http://localhost:8000"
+                "--robotraconteur-tcp-ws-add-origin=http://localhost:8000,http://192.168.1.130:8000"
             ],
             "env": {
                 "ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC": "1",
-                "ROBOTRACONTEUR_LOG_LEVEL": "WARNING",
+                "ROBOTRACONTEUR_LOG_LEVEL": "INFO",
                 "ROBOTRACONTEUR_PYTHON_ENABLE_DEBUGPY": "TRUE"
-            }
+            },
+            "justMyCode": false
         },
         {
             "name": "Python: Current File",
