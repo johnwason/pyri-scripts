@@ -26,6 +26,8 @@ venv\Scripts\python -m pip install -e pyri-core
 if %errorlevel% neq 0 exit /b %errorlevel%
 venv\Scripts\python -m pip install -e pyri-robotics
 if %errorlevel% neq 0 exit /b %errorlevel%
+venv\Scripts\python -m pip install -e pyri-vision
+if %errorlevel% neq 0 exit /b %errorlevel%
 venv\Scripts\python -m pip install -e pyri-example-plugin
 if %errorlevel% neq 0 exit /b %errorlevel%
 

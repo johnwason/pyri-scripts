@@ -22,6 +22,7 @@ fi
 ./venv/bin/python -m pip install -e pyri-webui-server
 ./venv/bin/python -m pip install -e pyri-core
 ./venv/bin/python -m pip install -e pyri-robotics
+./venv/bin/python -m pip install -e pyri-vision
 ./venv/bin/python -m pip install -e pyri-example-plugin
 
 ./venv/bin/pyri-sandbox-service --install-blockly-compiler

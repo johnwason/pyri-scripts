@@ -4,7 +4,7 @@ import time
 import cv2
 
 # image_name="image_seq1"
-image_name="test_0"
+image_name="intrinsic_calib_dataset0"
 
 d = DeviceManagerClient('rr+tcp://localhost:59902?service=device_manager', autoconnect=False)
 
