@@ -7,3 +7,5 @@ set -e
 ../venv/bin/python add_device.py pyri_sandbox sandbox
 ../venv/bin/python add_device.py pyri_jog_joint_service jog_joint
 ../venv/bin/python add_device.py pyri_jog_cartesian_service jog_cartesian
+../venv/bin/python add_device.py pyri_camera_viewer_service vision_camera_viewer
+../venv/bin/python add_device.py pyri_camera_calibration_service vision_camera_calibration
