@@ -34,11 +34,11 @@ def show_image(image):
     gray = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
 
     ret, corners = cv2.findChessboardCorners(gray, (width, height), None)
-    print(ret)
-    print(corners)
+    #print(ret)
+    #print(corners)
 
-    cv2.imshow("chessboard",cv_image)
-    cv2.waitKey(500)
+    #cv2.imshow("chessboard",cv_image)
+    #cv2.waitKey(500)
 
     objp = np.zeros((height*width, 3), np.float32)
     objp[:, :2] = np.mgrid[0:width, 0:height].T.reshape(-1, 2)
@@ -55,10 +55,29 @@ def show_image(image):
     ret,rvecs, tvecs = cv2.solvePnP(objp, corners2, mtx, dist)
     # project 3D points to image plane
     imgpts, jac = cv2.projectPoints(axis, rvecs, tvecs, mtx, dist)
-    cv_image2 = draw(cv_image,corners2,imgpts)
+    #cv_image2 = draw(cv_image,corners2,imgpts)
+
+    cv_image2 = cv2.aruco.drawAxis(cv_image,mtx,dist,rvecs.flatten(),tvecs.flatten(),0.1)
+    cv_image2 = cv2.aruco.drawAxis(cv_image,mtx,dist,np.array([0,0,0],dtype=np.float64),np.array([0,0,1.2],dtype=np.float64),0.1)
+
+    print(f"rvec: {rvecs.flatten()} tvec: {tvecs.flatten()}")
+
+    R = cv2.Rodrigues(rvecs.flatten())[0]
+
+    R_landmark = np.array([[0,1,0],[1,0,0],[0,0,-1]],dtype=np.float64)
+
+    R_cam1 = R.transpose()
+    p_cam1 = -R.transpose() @ tvecs
+
+    R_cam = R_landmark.transpose() @ R_cam1
+    p_cam = R_landmark.transpose() @ p_cam1
+
+    print(f"R_cam: {R_cam} p_cam: {p_cam}")
 
     cv2.imshow("chessboard_pose",cv_image2)
     cv2.waitKey()
+
+    pass
 
 
 
