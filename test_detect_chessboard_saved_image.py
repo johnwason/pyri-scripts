@@ -57,7 +57,6 @@ def show_image(image):
     imgpts, jac = cv2.projectPoints(axis, rvecs, tvecs, mtx, dist)
     #cv_image2 = draw(cv_image,corners2,imgpts)
 
-    cv_image2 = cv2.aruco.drawAxis(cv_image,mtx,dist,rvecs.flatten(),tvecs.flatten(),0.1)
     cv_image2 = cv2.aruco.drawAxis(cv_image,mtx,dist,np.array([0,0,0],dtype=np.float64),np.array([0,0,1.2],dtype=np.float64),0.1)
 
     print(f"rvec: {rvecs.flatten()} tvec: {tvecs.flatten()}")
@@ -65,6 +64,7 @@ def show_image(image):
     R = cv2.Rodrigues(rvecs.flatten())[0]
 
     R_landmark = np.array([[0,1,0],[1,0,0],[0,0,-1]],dtype=np.float64)
+    # R_landmark = np.eye(3)
 
     R_cam1 = R.transpose()
     p_cam1 = -R.transpose() @ tvecs
@@ -74,6 +74,7 @@ def show_image(image):
 
     print(f"R_cam: {R_cam} p_cam: {p_cam}")
 
+    cv_image2 = cv2.aruco.drawAxis(cv_image,mtx,dist,cv2.Rodrigues(R_cam.transpose())[0],-R_cam.transpose()@p_cam,0.1)
     cv2.imshow("chessboard_pose",cv_image2)
     cv2.waitKey()
 
