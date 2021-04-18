@@ -13,12 +13,12 @@ d.connect_device("vision_camera_calibration")
 
 calibration_service = d.get_device_client("vision_camera_calibration",1)
 
-ret = calibration_service.calibrate_camera_extrinsic("camera", "camera_intrinsic_calibration", "extrinsic_image0", "chessboard", "") # "camera_extrinsic_calibration")
+ret = calibration_service.calibrate_camera_extrinsic("camera", "camera_intrinsic_calibration", "extrinsic_image0", "chessboard", "camera_extrinsic_calibration0") # "camera_extrinsic_calibration1")
 
 image_util = ImageUtil(client_obj = calibration_service)
 geom_util = GeometryUtil(client_obj = calibration_service)
 
-T = geom_util.named_pose_to_rox_transform(ret.camera_pose)
+T = geom_util.named_pose_to_rox_transform(ret.camera_pose.pose)
 print(T)
 print(ret)
 

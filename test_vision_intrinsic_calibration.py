@@ -12,7 +12,7 @@ d.connect_device("vision_camera_calibration")
 
 calibration_service = d.get_device_client("vision_camera_calibration",1)
 
-ret = calibration_service.calibrate_camera_intrinsic("camera", "intrinsic_calib_dataset0", "chessboard", "") #"camera_intrinsic_calibration")
+ret = calibration_service.calibrate_camera_intrinsic("camera", "intrinsic_calib_dataset0", "chessboard", "camera_intrinsic_calibration") #"camera_intrinsic_calibration")
 
 image_util = ImageUtil(client_obj=calibration_service)
 i=0
