@@ -2,9 +2,11 @@ from pyri.device_manager_client import DeviceManagerClient
 from RobotRaconteur.Client import *
 import time
 import cv2
+from RobotRaconteurCompanion.Util.ImageUtil import ImageUtil
 
 # image_name="image_seq1"
 image_name="intrinsic_calib_dataset0"
+# image_name = "test5"
 
 d = DeviceManagerClient('rr+tcp://localhost:59902?service=device_manager', autoconnect=False)
 
@@ -17,12 +19,14 @@ var_storage = d.get_device_client("variable_storage",1)
 var = var_storage.getf_variable_value("globals",image_name)
 
 def show_image(image):
-    cv_image=image.data.reshape([image.image_info.height, image.image_info.width, int(len(image.data)/(image.image_info.height*image.image_info.width))], order='C')
+    image_util = ImageUtil(client_obj = var_storage)
+    cv_image = image_util.compressed_image_to_array(image)
+    #cv_image=image.data.reshape([image.image_info.height, image.image_info.width, int(len(image.data)/(image.image_info.height*image.image_info.width))], order='C')
 
     cv2.imshow("image",cv_image)
     cv2.waitKey()
 
-if var.datatype == "com.robotraconteur.image.Image":
+if var.datatype == "com.robotraconteur.image.CompressedImage":
     show_image(var.data)
 elif var.datatype == "string":
     image_names=var.data.splitlines()
