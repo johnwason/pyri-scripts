@@ -8,4 +8,4 @@ gnome-terminal \
   --tab --title="webui_server" -e ./run_webui_server \
   --tab --title="robotics_jog" -e ./run_robotics_jog \
   --tab --title="vision_camera_viewer" -e ./run_vision_camera_viewer \
-  --tab --title="vision_camera_calibration" -e ./run_vision_camera_calibration
+  --tab --title="vision_camera_calibration" -e ./run_vision_calibration

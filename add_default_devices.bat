@@ -8,4 +8,4 @@ setlocal
 ..\venv\Scripts\python add_device.py pyri_robotics_jog_service robotics_jog
 ..\venv\Scripts\python add_device.py pyri_camera_viewer_service vision_camera_viewer
 ..\venv\Scripts\python add_device.py pyri_camera_calibration_service vision_camera_calibration
-..\venv\Scripts\python add_device.py pyri_vision_robot_calibration_service vision_robot_calibration
+rem ..\venv\Scripts\python add_device.py pyri_vision_robot_calibration_service vision_robot_calibration
