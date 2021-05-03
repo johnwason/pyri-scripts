@@ -10,6 +10,17 @@ IF ERRORLEVEL 1 (
     EXIT /B 100
 )
 
+venv\Scripts\python -m pip uninstall pyri-common -y
+venv\Scripts\python -m pip uninstall pyri-variable-storage -y
+venv\Scripts\python -m pip uninstall pyri-device-manager -y
+venv\Scripts\python -m pip uninstall pyri-devices-states -y
+venv\Scripts\python -m pip uninstall pyri-sandbox -y
+venv\Scripts\python -m pip uninstall pyri-webui-server -y
+venv\Scripts\python -m pip uninstall pyri-core -y
+venv\Scripts\python -m pip uninstall pyri-robotics -y
+venv\Scripts\python -m pip uninstall pyri-vision -y
+venv\Scripts\python -m pip uninstall pyri-example-plugin -y
+
 venv\Scripts\python -m pip install -e pyri-common
 if %errorlevel% neq 0 exit /b %errorlevel%
 venv\Scripts\python -m pip install -e pyri-variable-storage

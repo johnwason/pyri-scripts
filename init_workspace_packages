@@ -14,6 +14,17 @@ fi
 
 ./venv/bin/python -m pip install requests packaging wheel
 
+./venv/bin/python -m pip uninstall pyri-common -y || true
+./venv/bin/python -m pip uninstall pyri-variable-storage -y || true
+./venv/bin/python -m pip uninstall pyri-device-manager -y || true
+./venv/bin/python -m pip uninstall pyri-devices-states -y || true
+./venv/bin/python -m pip uninstall pyri-sandbox -y || true
+./venv/bin/python -m pip uninstall pyri-webui-server -y || true
+./venv/bin/python -m pip uninstall pyri-core -y || true
+./venv/bin/python -m pip uninstall pyri-robotics -y || true
+./venv/bin/python -m pip uninstall pyri-vision -y || true
+./venv/bin/python -m pip uninstall pyri-example-plugin -y || true
+
 ./venv/bin/python -m pip install -e pyri-common
 ./venv/bin/python -m pip install -e pyri-variable-storage
 ./venv/bin/python -m pip install -e pyri-device-manager
