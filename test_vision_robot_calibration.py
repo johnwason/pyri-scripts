@@ -15,9 +15,9 @@ d.connect_device("vision_robot_calibration")
 calibration_service = d.get_device_client("vision_robot_calibration",1)
 
 geom_util = GeometryUtil(client_obj=calibration_service)
-marker_pose = geom_util.xyz_rpy_to_pose(np.array([0,0.04,0]),np.array([-np.pi/2.0,0.0,0.0]))
+marker_pose = geom_util.xyz_rpy_to_pose(np.array([0.0393,-0.0091,0.055]),np.array(np.deg2rad([90.0,0.0,180.0])))
 
-ret = calibration_service.calibrate_robot_origin("robot", "camera_intrinsic_calibration", "camera_extrinsic_calibration0",  "robot_calibration_seq0", "DICT_6X6_250", 120, 0.06, marker_pose, "robot_origin_calibration0") # "robot_origin_calibration0"
+ret = calibration_service.calibrate_robot_origin("robot", "camera_intrinsic_calibration", "camera_extrinsic_calibration",  "robot_calib0", "DICT_6X6_250", 150, 0.0316, marker_pose, "") # "robot_origin_calibration0"
 
 image_util = ImageUtil(client_obj = calibration_service)
 geom_util = GeometryUtil(client_obj = calibration_service)

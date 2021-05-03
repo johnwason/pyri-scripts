@@ -3,11 +3,11 @@ from RobotRaconteur.Client import *
 
 d = DeviceManagerClient('rr+tcp://localhost:59902?service=device_manager', autoconnect=False)
 
-#d.refresh_devices(1)
+d.refresh_devices(1)
 
-d.connect_device('joint_jog')
+d.connect_device('robotics_jog')
 
-jog_service = d.get_device_client("jog_joint",1)
+jog_service = d.get_device_client("robotics_jog",1)
 
 print(jog_service.device_info.device.name)
 
@@ -19,5 +19,5 @@ jog.setf_jog_mode()
     #jog.jog_joints3(1,1)
 #jog.setf_halt_mode()
 
-jog.jog_joints_to_angles([0.1,0.1,-0.1,0.1,-0.1,0.2,0.3])
+jog.jog_joints_to_angles([0.1,0.1,-0.1,0.1,-0.1,0.2],50)
 
