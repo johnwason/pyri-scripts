@@ -11,8 +11,7 @@
             "module": "pyri.variable_storage",
             "args": [
                 "--db-file=test3.db",
-                "--device-info-file=pyri-variable-storage/config/pyri_variable_storage_default_info.yml",
-                "--robotraconteur-tcp-ws-add-origin=http://localhost:8000"
+                "--device-info-file=pyri-variable-storage/config/pyri_variable_storage_default_info.yml"
             ],
             "env": {
                 "ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC": "1",
@@ -26,8 +25,7 @@
             "module": "pyri.device_manager",
             "args": [
                 "--device-info-file=pyri-device-manager/config/pyri_device_manager_default_info.yml",
-                "--variable-storage-url=rr+tcp://localhost:59901?service=variable_storage",
-                "--robotraconteur-tcp-ws-add-origin=http://localhost:8000"
+                "--variable-storage-url=rr+tcp://localhost:59901?service=variable_storage"
             ],
             "env": {
                 "ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC": "1",
@@ -42,8 +40,7 @@
             "module": "pyri.sandbox",
             "args": [
                 "--device-info-file=pyri-sandbox/config/pyri_sandbox_default_info.yml",
-                "--device-manager-url=rr+tcp://localhost:59902?service=device_manager",
-                "--robotraconteur-tcp-ws-add-origin=http://localhost:8000"
+                "--device-manager-url=rr+tcp://localhost:59902?service=device_manager"
             ],
             "env": {
                 "ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC": "1",
@@ -57,8 +54,7 @@
             "request": "launch",
             "module": "pyri.webui_server",
             "args": [
-                "--device-manager-url=rr+tcp://localhost:59902?service=device_manager",
-                "--robotraconteur-tcp-ws-add-origin=http://localhost:8000"
+                "--device-manager-url=rr+tcp://localhost:59902?service=device_manager"
             ],
             "env": {
                 "ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC": "1",
@@ -73,8 +69,7 @@
             "module": "pyri.devices_states",
             "args": [
                 "--device-info-file=pyri-devices-states/config/pyri_devices_states_default_info.yml",
-                "--device-manager-url=rr+tcp://localhost:59902?service=device_manager",
-                "--robotraconteur-tcp-ws-add-origin=http://localhost:8000"
+                "--device-manager-url=rr+tcp://localhost:59902?service=device_manager"
             ],
             "env": {
                 "ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC": "1",
@@ -89,8 +84,7 @@
             "module": "pyri.robotics.robotics_jog_service",
             "args": [
                 "--device-info-file=pyri-robotics/config/pyri_robotics_jog_service_default_info.yml",
-                "--device-manager-url=rr+tcp://localhost:59902?service=device_manager",
-                "--robotraconteur-tcp-ws-add-origin=http://localhost:8000,http://192.168.1.130:8000"
+                "--device-manager-url=rr+tcp://localhost:59902?service=device_manager"
             ],
             "env": {
                 "ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC": "1",
@@ -105,8 +99,7 @@
             "module": "pyri.vision.camera_viewer_service",
             "args": [
                 "--device-info-file=pyri-vision/config/pyri_vision_camera_viewer_service_default_info.yml",
-                "--device-manager-url=rr+tcp://localhost:59902?service=device_manager",
-                "--robotraconteur-tcp-ws-add-origin=http://localhost:8000,http://192.168.1.130:8000"
+                "--device-manager-url=rr+tcp://localhost:59902?service=device_manager"
             ],
             "env": {
                 "ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC": "1",

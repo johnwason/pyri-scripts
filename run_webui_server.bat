@@ -11,5 +11,5 @@ cd %~dp0\..
 
 call venv\Scripts\activate.bat
 
-python -m pyri.webui_server --device-manager-url=rr+tcp://localhost:59902?service=device_manager --robotraconteur-tcp-ws-add-origin=http://localhost:8000,http://192.168.1.130:8000 --robotraconteur-tcp-ipv4-discovery=true
+python -m pyri.webui_server --device-manager-url=rr+tcp://192.168.1.130:59902?service=device_manager --robotraconteur-tcp-ipv4-discovery=true
 
