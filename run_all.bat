@@ -11,4 +11,5 @@ wt new-tab -d . run_variable_storage.bat ;^
    new-tab -d . run_vision_robot_calibration.bat ;^
    new-tab -d . run_vision_template_matching.bat ;^
    new-tab -d . run_vision_aruco_detection.bat ;^
-   new-tab -d . run_robotics_motion.bat
+   new-tab -d . run_robotics_motion.bat ;^
+   new-tab -d . run_program_master.bat

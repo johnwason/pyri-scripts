@@ -32,8 +32,8 @@ for i in range(5):
     obj_pose[0]["position"]["y"] = 0.1
     obj_pose[0]["orientation"] = np.deg2rad(10)
 
-    _run_grab(c.grab_object_planar("robot","tool","robot_origin_calibration0","pick_reference",obj_pose, 0.05, 0.01, 50))
+    _run_grab(c.grab_object_planar("robot","tool","robot_origin_calibration","pick_reference",obj_pose, 0.05, 0.01, 50))
     obj_pose[0]["orientation"] = np.deg2rad(120)
-    obj_pose[0]["position"]["x"] = 0.2
-    _run_grab(c.grab_object_planar("robot","tool","robot_origin_calibration0","pick_reference",obj_pose, 0.05, 0.01, 50))
+    obj_pose[0]["position"]["x"] = -0.2
+    _run_grab(c.grab_object_planar("robot","tool","robot_origin_calibration","pick_reference",obj_pose, 0.05, 0.01, 50))
 

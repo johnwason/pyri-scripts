@@ -12,6 +12,7 @@ gnome-terminal \
   --tab --title="vision_robot_calibration" -e ./run_vision_robot_calibration \
   --tab --title="vision_template_matching" -e ./run_vision_template_matching \
   --tab --title="vision_aruco_detection" -e ./run_vision_aruco_detection \
-  --tab --title="robotics_motion" -e ./run_robotics_motion
+  --tab --title="robotics_motion" -e ./run_robotics_motion \
+  --tab --title="program_master" -e ./run_program_master
 
 
