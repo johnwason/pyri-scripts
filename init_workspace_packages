@@ -40,3 +40,4 @@ fi
 
 cd scripts
 ../venv/bin/python install_webui_browser_wheels.py
+../venv/bin/python install_webui_browser_deps.py

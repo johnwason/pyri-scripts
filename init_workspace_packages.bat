@@ -51,4 +51,5 @@ if %errorlevel% neq 0 exit /b %errorlevel%
 cd scripts
 ..\venv\Scripts\python install_webui_browser_wheels.py
 if %errorlevel% neq 0 exit /b %errorlevel%
-
+..\venv\Scripts\python install_webui_browser_deps.py
+if %errorlevel% neq 0 exit /b %errorlevel%

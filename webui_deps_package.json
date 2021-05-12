@@ -1,0 +1,16 @@
+{
+    "name": "pyri-webui-browser-deps",
+    "version": "0.1.0",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "5.15.3",
+        "bootstrap": "4.6.0",
+        "bootstrap-table": "1.18.2",
+        "bootstrap-vue": "2.21.2",
+        "cropperjs": "1.5.11",
+        "fontawesome": "5.6.3",
+        "golden-layout": "1.5.9",
+        "jquery": "3.6.0",
+        "vue": "2.6.12"
+    }
+}
