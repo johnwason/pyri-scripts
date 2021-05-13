@@ -11,5 +11,5 @@ cd %~dp0\..
 
 call venv\Scripts\activate.bat
 
-python -m pyri.webui_server --device-manager-url=rr+tcp://192.168.1.130:59902?service=device_manager --robotraconteur-tcp-ipv4-discovery=true
+python -m pyri.webui_server --device-manager-url="rr+tcp://{{ HOSTNAME }}:59902?service=device_manager" --robotraconteur-tcp-ipv4-discovery=true
 
