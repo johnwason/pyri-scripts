@@ -12,3 +12,4 @@ setlocal
 ..\venv\Scripts\python add_device.py pyri_template_matching_service vision_template_matching
 ..\venv\Scripts\python add_device.py pyri_aruco_detection_service vision_aruco_detection
 ..\venv\Scripts\python add_device.py pyri_robotics_motion_service robotics_motion
+..\venv\Scripts\python add_device.py pyri_program_master program_master

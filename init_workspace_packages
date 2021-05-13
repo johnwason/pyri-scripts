@@ -23,6 +23,7 @@ fi
 ./venv/bin/python -m pip uninstall pyri-core -y || true
 ./venv/bin/python -m pip uninstall pyri-robotics -y || true
 ./venv/bin/python -m pip uninstall pyri-vision -y || true
+./venv/bin/python -m pip uninstall pyri-program-master -y || true
 ./venv/bin/python -m pip uninstall pyri-example-plugin -y || true
 
 ./venv/bin/python -m pip install -e pyri-common
@@ -34,6 +35,7 @@ fi
 ./venv/bin/python -m pip install -e pyri-core
 ./venv/bin/python -m pip install -e pyri-robotics
 ./venv/bin/python -m pip install -e pyri-vision
+./venv/bin/python -m pip install -e pyri-program-master
 ./venv/bin/python -m pip install -e pyri-example-plugin
 
 ./venv/bin/pyri-sandbox-service --install-blockly-compiler
