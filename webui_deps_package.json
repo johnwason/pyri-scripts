@@ -4,6 +4,7 @@
     "license": "Apache-2.0",
     "dependencies": {
         "@fortawesome/fontawesome-free": "5.15.3",
+        "blockly": "5.20210325.1",
         "bootstrap": "4.6.0",
         "bootstrap-table": "1.18.2",
         "bootstrap-vue": "2.21.2",
@@ -11,6 +12,7 @@
         "fontawesome": "5.6.3",
         "golden-layout": "1.5.9",
         "jquery": "3.6.0",
+        "monaco-editor": "0.24.0",
         "vue": "2.6.12"
     }
 }
