@@ -21,12 +21,9 @@ from packaging.version import parse
 import sys
 import tarfile
 import io
+import argparse
 
 pyodide_url = "https://github.com/robotraconteur/robotraconteur_pyodide/archive/refs/heads/gh-pages.tar.gz"
-
-webui_resource_dir = Path(appdirs.user_data_dir(appname="pyri-webui-server", appauthor="pyri-project", roaming=False))
-deps_dir = webui_resource_dir.joinpath("deps")
-pyodide_dir = webui_resource_dir.joinpath("robotraconteur_pyodide")
 
 webui_deps_package_json = Path(__file__).parent.joinpath("webui_deps_package.json")
 
@@ -39,6 +36,19 @@ def dir_remove_all(path1):
             shutil.rmtree(path)
 
 def main():
+
+    parser = argparse.ArgumentParser(description="Install PyRI WebUI Server dependencies")
+    parser.add_argument("--static-data-dir",type=str,default=None,help="Directory to store WebUI static data (Pyodide, wheels, deps)")
+
+    args, _ = parser.parse_known_args()
+
+    if args.static_data_dir is not None:
+        static_data_dir = Path(args.static_data_dir)
+    else:
+        static_data_dir = Path(appdirs.user_data_dir(appname="pyri-webui-server", appauthor="pyri-project", roaming=False))
+    deps_dir = static_data_dir.joinpath("deps")
+    pyodide_dir = static_data_dir.joinpath("robotraconteur_pyodide")
+
     dir_remove_all(deps_dir)
     dir_remove_all(pyodide_dir)
 

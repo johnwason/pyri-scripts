@@ -19,10 +19,9 @@ from pathlib import Path
 import requests
 from packaging.version import parse
 import sys
+import argparse
 
-wheels_dir = Path(appdirs.user_data_dir(appname="pyri-webui-server", appauthor="pyri-project", roaming=False)).joinpath("wheels")
-
-def install_wheel(wheel_name):
+def install_wheel(wheel_name,wheels_dir):
     print(f"Installing {wheel_name}")
     base_path = Path("..").absolute()
     with open(base_path.joinpath(wheel_name).joinpath("setup.py"),"r") as f:
@@ -44,7 +43,7 @@ def install_wheel(wheel_name):
     shutil.copyfile(wheel_fname,wheel_target_fname)
     print(f"Copied wheel version {version} to {str(wheels_dir)}")
 
-def install_pip_wheel(wheel_name):
+def install_pip_wheel(wheel_name,wheels_dir):
     package_json = requests.get(f'https://pypi.python.org/pypi/{wheel_name}/json').json()
     releases = package_json["releases"]
     version = parse('0')
@@ -85,13 +84,24 @@ def install_pip_wheel(wheel_name):
     
 
 def main():
+
+    parser = argparse.ArgumentParser(description="Install PyRI WebUI Server wheels")
+    parser.add_argument("--static-data-dir",type=str,default=None,help="Directory to store WebUI static data (Pyodide, wheels, deps)")
+
+    args, _ = parser.parse_known_args()
+
+    if args.static_data_dir is not None:
+        wheels_dir = Path(args.static_data_dir).joinpath("wheels")
+    else:
+        wheels_dir = Path(appdirs.user_data_dir(appname="pyri-webui-server", appauthor="pyri-project", roaming=False)).joinpath("wheels")
+
     wheels_dir.mkdir(exist_ok=True, parents=True)
 
     for w in wheels_names:
-        install_wheel(w)
+        install_wheel(w,wheels_dir)
 
     for w in pip_wheels_names:
-        install_pip_wheel(w)
+        install_pip_wheel(w,wheels_dir)
 
 if __name__ == "__main__":
     main()
