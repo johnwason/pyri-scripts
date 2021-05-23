@@ -12,4 +12,4 @@ cd $SCRIPTPATH/..
 
 source ./venv/bin/activate
 
-python -m pyri.variable_storage --db-file=test3.db --device-info-file=pyri-variable-storage/config/pyri_variable_storage_default_info.yml --robotraconteur-tcp-ipv4-discovery=true
+python -m pyri.variable_storage --db-file=test3.db

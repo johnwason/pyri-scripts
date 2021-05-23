@@ -11,5 +11,5 @@ cd %~dp0\..
 
 call venv\Scripts\activate.bat
 
-python -m pyri.device_manager --device-info-file=pyri-device-manager/config/pyri_device_manager_default_info.yml --variable-storage-url=rr+tcp://localhost:59901?service=variable_storage --robotraconteur-tcp-ipv4-discovery=true
+python -m pyri.device_manager
 

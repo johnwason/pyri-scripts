@@ -11,5 +11,5 @@ cd %~dp0\..
 
 call venv\Scripts\activate.bat
 
-python -m pyri.devices_states --device-info-file=pyri-devices-states/config/pyri_devices_states_default_info.yml --device-manager-url=rr+tcp://localhost:59902?service=device_manager --robotraconteur-tcp-ipv4-discovery=true
+python -m pyri.devices_states
 

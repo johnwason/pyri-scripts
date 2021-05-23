@@ -11,5 +11,5 @@ cd %~dp0\..
 
 call venv\Scripts\activate.bat
 
-python -m pyri.variable_storage --db-file=test3.db --device-info-file=pyri-variable-storage/config/pyri_variable_storage_default_info.yml --robotraconteur-tcp-ipv4-discovery=true
+python -m pyri.variable_storage --db-file=test3.db
 

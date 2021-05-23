@@ -11,5 +11,5 @@ cd %~dp0\..
 
 call venv\Scripts\activate.bat
 
-python -m pyri.robotics.robotics_jog_service --device-info-file=pyri-robotics/config/pyri_robotics_jog_service_default_info.yml --device-manager-url=rr+tcp://localhost:59902?service=device_manager --robotraconteur-tcp-ipv4-discovery=true
+python -m pyri.robotics.robotics_jog_service
 

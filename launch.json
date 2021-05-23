@@ -39,8 +39,8 @@
             "request": "launch",
             "module": "pyri.sandbox",
             "args": [
-                "--device-info-file=pyri-sandbox/config/pyri_sandbox_default_info.yml",
-                "--device-manager-url=rr+tcp://localhost:59902?service=device_manager"
+                //"--device-info-file=pyri-sandbox/config/pyri_sandbox_default_info.yml",
+                //"--device-manager-url=rr+tcp://localhost:59902?service=device_manager"
             ],
             "env": {
                 "ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC": "1",
@@ -68,8 +68,8 @@
             "request": "launch",
             "module": "pyri.devices_states",
             "args": [
-                "--device-info-file=pyri-devices-states/config/pyri_devices_states_default_info.yml",
-                "--device-manager-url=rr+tcp://localhost:59902?service=device_manager"
+                //"--device-info-file=pyri-devices-states/config/pyri_devices_states_default_info.yml",
+                //"--device-manager-url=rr+tcp://localhost:59902?service=device_manager"
             ],
             "env": {
                 "ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC": "1",
@@ -83,8 +83,8 @@
             "request": "launch",
             "module": "pyri.robotics.robotics_jog_service",
             "args": [
-                "--device-info-file=pyri-robotics/config/pyri_robotics_jog_service_default_info.yml",
-                "--device-manager-url=rr+tcp://localhost:59902?service=device_manager"
+                //"--device-info-file=pyri-robotics/config/pyri_robotics_jog_service_default_info.yml",
+                //"--device-manager-url=rr+tcp://localhost:59902?service=device_manager"
             ],
             "env": {
                 "ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC": "1",
@@ -98,8 +98,8 @@
             "request": "launch",
             "module": "pyri.vision.camera_viewer_service",
             "args": [
-                "--device-info-file=pyri-vision/config/pyri_vision_camera_viewer_service_default_info.yml",
-                "--device-manager-url=rr+tcp://localhost:59902?service=device_manager"
+                //"--device-info-file=pyri-vision/config/pyri_vision_camera_viewer_service_default_info.yml",
+                //"--device-manager-url=rr+tcp://localhost:59902?service=device_manager"
             ],
             "env": {
                 "ROBOTRACONTEUR_PYTHON_TRACEBACK_PRINT_EXC": "1",

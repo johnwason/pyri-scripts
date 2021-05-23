@@ -1,7 +1,7 @@
 from pyri.device_manager_client import DeviceManagerClient
 from RobotRaconteur.Client import *
 
-d = DeviceManagerClient('rr+tcp://localhost:59902?service=device_manager')
+d = DeviceManagerClient()
 #d = DeviceManagerClient()
 
 d.refresh_devices(1)

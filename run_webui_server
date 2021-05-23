@@ -12,4 +12,4 @@ cd $SCRIPTPATH/..
 
 source ./venv/bin/activate
 
-python -m pyri.webui_server --device-manager-url="rr+tcp://{{ HOSTNAME }}:59902?service=device_manager" --robotraconteur-tcp-ipv4-discovery=true
+python -m pyri.webui_server --device-manager-url="rr+tcp://{{ HOSTNAME }}:59902?service=device_manager"
