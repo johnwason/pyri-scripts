@@ -6,7 +6,7 @@
 # pip install requests packaging wheel
 
 # Package names to build from the PyRI development tree
-wheels_names = ['pyri-webui-browser', 'pyri-common', 'pyri-vision-browser']
+wheels_names = ['pyri-webui-browser', 'pyri-common', 'pyri-robotics-browser', 'pyri-vision-browser']
 # Package names to install from PyPi
 pip_wheels_names = ['importlib_resources','RobotRaconteurCompanion', "general_robotics_toolbox", "zipp"]
 
