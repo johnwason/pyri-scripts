@@ -8,7 +8,7 @@
 # Package names to build from the PyRI development tree
 wheels_names = ['pyri-webui-browser', 'pyri-common', 'pyri-robotics-browser', 'pyri-vision-browser', 'pyri-robotics-motion-program-browser']
 # Package names to install from PyPi
-pip_wheels_names = [] #['importlib_resources','RobotRaconteurCompanion', "general_robotics_toolbox", "zipp"]
+pip_wheels_names = ['importlib_resources','RobotRaconteurCompanion', "general_robotics_toolbox", "zipp"]
 
 import subprocess
 import re
@@ -100,8 +100,8 @@ def main():
     for w in wheels_names:
         install_wheel(w,wheels_dir)
 
-    # for w in pip_wheels_names:
-    #     install_pip_wheel(w,wheels_dir)
+    for w in pip_wheels_names:
+        install_pip_wheel(w,wheels_dir)
 
 if __name__ == "__main__":
     main()

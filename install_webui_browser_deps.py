@@ -23,7 +23,7 @@ import tarfile
 import io
 import argparse
 
-pyodide_url = "https://github.com/robotraconteur/robotraconteur_pyodide/archive/refs/heads/gh-pages.tar.gz"
+pyodide_url = "https://github.com/pyodide/pyodide/releases/download/0.21.3/pyodide-build-0.21.3.tar.bz2"
 
 webui_deps_package_json = Path(__file__).parent.joinpath("webui_deps_package.json")
 
@@ -62,12 +62,9 @@ def main():
     r = requests.get(pyodide_url, allow_redirects=True)
     f = io.BytesIO(r.content)
 
-    with tarfile.open(fileobj=f,mode="r:gz") as tar:
-        subdir_and_files = [
-            tarinfo for tarinfo in tar.getmembers()
-            if tarinfo.name.startswith("robotraconteur_pyodide-gh-pages/")
-        ]
-        tar.extractall(path=pyodide_dir, members=subdir_and_files)
+    with tarfile.open(fileobj=f,mode="r:bz2") as tar:
+        
+        tar.extractall(path=pyodide_dir)
 if __name__ == "__main__":
     main()
 

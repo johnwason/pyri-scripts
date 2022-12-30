@@ -19,7 +19,7 @@ var_consts = RRN.GetConstants('tech.pyri.variable_storage', var_storage)
 variable_persistence = var_consts["VariablePersistence"]
 variable_protection_level = var_consts["VariableProtectionLevel"]
 
-robot_local_device_name = "robot_mp"
+robot_local_device_name = "robot"
 output_global_name = f"{robot_local_device_name}_origin_calibration"
 
 var_storage.add_variable2("globals",output_global_name,"com.robotraconteur.geometry.NamedPoseWithCovariance", \
