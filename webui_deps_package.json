@@ -4,15 +4,15 @@
     "license": "Apache-2.0",
     "dependencies": {
         "@fortawesome/fontawesome-free": "5.15.3",
-        "blockly": "8.0.5",
-        "bootstrap": "4.6.0",
-        "bootstrap-table": "1.18.2",
-        "bootstrap-vue": "2.21.2",
+        "blockly": "9.2.0",
+        "bootstrap": "4.6.2",
+        "bootstrap-table": "1.21.2",
+        "bootstrap-vue": "2.23.1",
         "cropperjs": "1.5.11",
         "fontawesome": "5.6.3",
-        "golden-layout": "1.5.9",
-        "jquery": "3.6.0",
-        "monaco-editor": "0.33.0",
-        "vue": "2.6.12"
+        "golden-layout": "2.6.0",
+        "jquery": "3.6.3",
+        "monaco-editor": "0.34.1",
+        "vue": "2.6.14"
     }
 }
