@@ -58,6 +58,12 @@ def main():
     shutil.copy(webui_deps_package_json, deps_dir.joinpath("package.json"))
 
     subprocess.check_call("npm install",shell=True, cwd=deps_dir)
+
+    # Install golden-layout.min.js due to annoying missing file
+    gl_umd_dir = deps_dir / "node_modules" / "golden-layout" / "dist" / "bundle" / "umd"
+    gl_umd_dir.mkdir(exist_ok=True, parents=True)
+    gl_umd_js = Path(__file__).parent.joinpath("golden-layout.js")
+    shutil.copyfile(gl_umd_js, gl_umd_dir / gl_umd_js.name)
     
     r = requests.get(pyodide_url, allow_redirects=True)
     f = io.BytesIO(r.content)
